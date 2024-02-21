@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :images
+  resources :products
   root to: 'home#index' # Set your root path accordingly
 end

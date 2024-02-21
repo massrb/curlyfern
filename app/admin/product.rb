@@ -1,5 +1,5 @@
 
-ActiveAdmin.register Image do
+ActiveAdmin.register Product do
   permit_params :name, :image_data
 
   form do |f|
@@ -22,7 +22,9 @@ ActiveAdmin.register Image do
   index do
     column :name
     column "image" do |img|
-      image_tag img.image_data.variant(:thumb)
+      unless img.image_data.nil?
+        image_tag img.image_data.variant(:thumb)
+      end
     end
     actions
   end

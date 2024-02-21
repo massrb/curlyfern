@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_20_181705) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_21_154748) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -65,12 +65,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_181705) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "image_data"
-    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price", precision: 8, scale: 2
+    t.integer "inventory"
+    t.text "description"
+    t.integer "category"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

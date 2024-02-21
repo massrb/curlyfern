@@ -1,4 +1,4 @@
-class Image < ApplicationRecord
+class Product < ApplicationRecord
   has_one_attached :image_data do |attachable|
     attachable.variant :thumb, resize_to_limit: [100, 100],
     preprocessed: true
